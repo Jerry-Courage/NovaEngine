@@ -3,34 +3,149 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
     <title>Sign-Up</title>
+    <style>
+      body {
+        background-color: #0a0f2c;
+        color: white;
+        text-align: center;
+        justify-content: space-between;
+      }
+
+      #form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        margin-top: 20px;
+        justify-content: space-between;
+      }
+
+      .form-group {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        justify-content: space-between;
+      }
+      .form-group label,
+      input {
+        font-size: 20px;
+        display: inline-block;
+      }
+
+      label {
+        width: 120px; /* fixes alignment */
+        text-align: right;
+        display: inline-block;
+      }
+
+      input,
+      select {
+        flex: 1;
+        padding: 5px;
+      }
+      .form-group input {
+        width: 288px;
+        border-radius: 13px;
+        padding-left: 20px;
+        padding-top: 12px;
+        padding-bottom: 10px;
+      }
+      .form-group input::placeholder {
+        font-size: 16px;
+      }
+      .main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 300px;
+        
+        font-size:10px;
+        
+      }
+      h1 {
+        font-size: 50px;
+        margin-top: 20px;
+      }
+      .pls {
+        font-size: 20px;
+      }
+      #role {
+        width: 20px;
+        height: 40px;
+        border-radius: 13px;
+        font-size: 18px;
+        padding-left: 10px;
+        margin-left: 10px;
+        margin-top:-76px;
+        
+      }
+      .role {
+      
+        
+        
+      }
+      
+      .logo img {
+        width:150px;
+        height:150px;
+        
+    
+      }
+    </style>
   </head>
-  <style>
-    body {
-      background-color: #0a0f2c;
-    }
-    #form {
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-      align-items: center;
-    }
-    #form input {
-      width: 300px;
-      height: 40px;
-      margin: 10px;
-      padding: 5px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-    }
-  </style>
   <body>
-    <forms id="form">
-      <input type="text" placeholder="Full Name" />
-      <input type="text" placeholder="Email " />
-      <input type="text" placeholder="Password" />
-      <input type="text" placeholder="Confirm Password" />
-      <input type="text" placeholder="Role" />
-    </forms>
+    <h1>Sign Up</h1>
+    <div class="pls">Please Sign-Up to create an account</div>
+    <div class="logo">
+      <img
+        src="image/file_00000000e1c461f9a425912a16c49f72-removebg-preview.png"
+        alt="OctaNova Logo"
+       
+      />
+    <div class="main">
+      <form id="form">
+        <div class="form-group">
+          <label for="fullname">Full Name : </label>
+          <input id="fullname" type="text" placeholder="Full Name" /><br />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email : </label>
+          <input id="email" type="text" placeholder="Email" /><br />
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password : </label>
+          <input id="password" type="password" placeholder="Password" /><br />
+        </div>
+
+        <div class="form-group">
+          <label for="confirm-password">Confirm Password : </label>
+          <input
+            id="confirm-password"
+            type="password"
+            placeholder="Confirm Password"
+          />
+        </div>
+        <br />
+
+        <div class="form-group role">
+          <label for="role">How do you describe yourself : </label>
+          <select name="role" id="role">
+            <option value="Dreamer">Dreamer</option>
+            <option value="investor">Investor</option>
+            <option value="company">Company</option>
+            <option value="Talent">Talent</option>
+          </select><br/>
+        </div>
+      </form>
+    </div>
   </body>
 </html>

@@ -7,6 +7,9 @@
 body {
     font-family: 'Poppins', sans-serif;
     overflow: hidden;
+    background-color:#0a0f2c ;
+    color: #ffff;
+    padding-bottom: 1000px;
 }
 
 .wave {
@@ -30,6 +33,12 @@ body {
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    
+    height: 90%;
+    margin-top:20px;
+    border-width: 1px;
+    border-style:solid ;
+    border-color: #101a5313;
 }
 
 .login-content {
@@ -40,7 +49,7 @@ body {
 }
 
 .img img {
-    width: 500px;
+    width: 689px;
 }
 
 form {
@@ -53,7 +62,7 @@ form {
 
 .login-content h2 {
     margin: 15px 0;
-    color: #333;
+    color:#ffff;
     text-transform: uppercase;
     font-size: 2.9rem;
 }
@@ -162,6 +171,18 @@ a:hover {
     color: #38d39f;
 }
 
+.what{border-radius: 25px;
+width:100%;
+height:38px;
+padding-left: 20px;
+font-size: 0.9rem;
+font-style: bold;
+
+margin-top:10px;
+
+}
+
+
 .btn {
     display: block;
     width: 100%;
@@ -169,7 +190,7 @@ a:hover {
     border-radius: 25px;
     outline: none;
     border: none;
-    background-image: linear-gradient(to right, #32be8f, #38d39f, #32be8f);
+    background-image: linear-gradient(to right, #2a858c, #0c1445, #111c59);
     background-size: 200%;
     font-size: 1.2rem;
     color: #fff;
