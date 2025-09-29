@@ -60,7 +60,7 @@ body {
   justify-content: center;
   align-items: center;
 }
-.div .input{font-size: 20px;
+.div .input{font-size: 16px;
 }
 .input::placeholder{color: white;}
 
