@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Nova — Opportunity Engine</title>
+  <meta name="description" content="Nova connects dreamers, talents, companies and investors — a search-first opportunity engine that lets opportunities find people.">
+  <meta name="keywords" content="opportunity engine, investors, startups, talent, dreamers, Nova">
+
+  <!-- Favicons -->
+  <link href="asset/img/logo.png" rel="icon">
+  <link href="asset/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="asset/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="asset/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="asset/vendor/aos/aos.css" rel="stylesheet">
+  <link href="asset/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="asset/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="asset/css/main.css" rel="stylesheet">
+</head>
+
+<body class="index-page">
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto">
+        <img src="asset/img/logo.png" alt="OctaNova logo" width="120" height="150">
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="#hero" class="active">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#opportunities">Opportunities</a></li>
+          <li><a href="#team">Team</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <a class="btn-getstarted" href="signUp.html">Get Started</a>
+
+    </div>
+  </header><!-- End Header -->
+
+  <main class="main">
+
+    <!-- ======= Hero Section ======= -->
+    <section id="hero" class="hero section">
+      <div class="container">
+        <div class="row gy-4 align-items-center">
+          <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center" data-aos="fade-up">
+            <h1>Where Opportunity Finds You</h1>
+            <p class="lead">Search projects, pitch ideas, discover talent, internships or meet the investors who share your vision — all from one smart engine.</p>
+
+            <!-- Search / Quick Match form -->
+            <form action="search.php" method="get" class="d-flex mb-3" role="search">
+              <input name="q" class="form-control me-2" type="search" placeholder="Search: e.g. 'AI researcher', 'seed investor', 'UX designer'..." aria-label="Search">
+              <select name="role" class="form-select me-2" aria-label="Role filter">
+                <option value="">All</option>
+                <option value="dreamer">Dreamers (Ideas)</option>
+                <option value="talent">Talents</option>
+                <option value="investor">Investors</option>
+                <option value="company">Companies</option>
+                <option value="opportunity">Opportunities</option>
+              </select>
+              <button class="btn btn-primary" type="submit">Search</button>
+            </form>
+
+            <div class="d-flex">
+              <a href="signUp.html" class="btn-get-started me-2">Create Profile</a>
+              <a href="pitch.php" class="btn-outline" style="margin-top: 13px;margin-left: 10px;">Post a Pitch</a>
+            </div>
+          </div>
+
+          <div class="col-lg-6 order-1 order-lg-2 hero-img text-center" data-aos="zoom-out" data-aos-delay="100" >
+            <img src="asset/img/file_0000000052dc61f69340fae1ef98d0ed.png" class="img-fluid animated" alt="OctaNova opportunity illustration" >
+          </div>
+        </div>
+      </div>
+    </section><!-- End Hero -->
+
+    <!-- ======= Featured Services (Core) ======= -->
+    <section id="featured-services" class="featured-services section">
+      <div class="container">
+        <div class="row gy-4">
+
+          <div class="col-lg-4 d-flex" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item position-relative">
+              <div class="icon"><i class="bi bi-search icon"></i></div>
+              <h4><a href="#features" class="stretched-link">Unified Search</a></h4>
+              <p>One search across profiles, pitches, companies and investors — tuned to surface the best matches instantly.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 d-flex" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-item position-relative">
+              <div class="icon"><i class="bi bi-people-fill icon"></i></div>
+              <h4><a href="#features" class="stretched-link">Smart Matching</a></h4>
+              <p>AI-powered recommendations connect the right talent to the right projects and the right capital to the right ideas.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 d-flex" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-item position-relative">
+              <div class="icon"><i class="bi bi-megaphone icon"></i></div>
+              <h4><a href="#features" class="stretched-link">Pitch Hub</a></h4>
+              <p>Dreamers can post short pitches (video or one-pager) and get discovery, feedback, and offers from investors and collaborators.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+        </div>
+      </div>
+    </section><!-- End Featured Services -->
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about section">
+      <div class="container section-title" data-aos="fade-up">
+        <span>About OctaNova</span>
+        <h2>About</h2>
+        <p>Nova is a search-first opportunity engine that brings together dreamers, talents, companies and investors — helping opportunity find people and people find opportunity.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-6 position-relative align-self-start" data-aos="fade-up" data-aos-delay="100">
+            <img src="asset/img/about-opportunity.png" class="img-fluid" alt="About OctaNova">
+            <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox pulsating-play-btn"></a>
+          </div>
+
+          <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="200">
+            <h3>Our mission</h3>
+            <p class="fst-italic">
+              To reduce friction in discovery and collaboration so great ideas get matched with the right people and resources — fast.
+            </p>
+
+            <ul>
+              <li><i class="bi bi-check2-all"></i> <span>Search-first discovery — find the right match, not just listings.</span></li>
+              <li><i class="bi bi-check2-all"></i> <span>Transparent profiles and verified credentials to build trust.</span></li>
+              <li><i class="bi bi-check2-all"></i> <span>Tools for pitching, collaborating and closing deals — all in one place.</span></li>
+            </ul>
+            <p>
+              Nova Engine is built for global reach with local focus — discover opportunities in your city or across the world.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section><!-- End About Section -->
+
+    <!-- ======= Stats Section ======= -->
+    <section id="stats" class="stats section">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4 text-center">
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item">
+              <span data-purecounter-start="0" data-purecounter-end="14250" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Registered Users</p>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item">
+              <span data-purecounter-start="0" data-purecounter-end="4200" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Talents</p>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item">
+              <span data-purecounter-start="0" data-purecounter-end="1200" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Investors & Companies</p>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item">
+              <span data-purecounter-start="0" data-purecounter-end="8600" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Opportunities Posted</p>
+            </div>
+          </div><!-- End Stats Item -->
+
+        </div>
+      </div>
+    </section><!-- End Stats Section -->
+
+    <!-- ======= Features / Services Section ======= -->
+    <section id="features" class="services section light-background">
+      <div class="container section-title" data-aos="fade-up">
+        <span>Platform Features</span>
+        <h2>What Nova Engine Offers</h2>
+        <p>Powerful features designed to connect ideas with capital and talent with work.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+        <div class="row gy-4">
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item position-relative">
+              <div class="icon"><i class="bi bi-search"></i></div>
+              <h3>Search & Discover</h3>
+              <p>Robust full-text search across profiles, pitches, roles and projects — plus advanced filters (location, role, industry, funding stage).</p>
+            </div>
+          </div><!-- End Feature Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-item position-relative">
+              <div class="icon"><i class="bi bi-gear-fill"></i></div>
+              <h3>Smart Match Engine</h3>
+              <p>AI-driven matching ranks best-fit investors, collaborators and jobs for each user and opportunity.</p>
+            </div>
+          </div><!-- End Feature Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-item position-relative">
+              <div class="icon"><i class="bi bi-megaphone-fill"></i></div>
+              <h3>Pitch Hub</h3>
+              <p>Create one-page pitches (with optional short video), get public feedback, and invite private investor reviews.</p>
+            </div>
+          </div><!-- End Feature Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="service-item position-relative">
+              <div class="icon"><i class="bi bi-people"></i></div>
+              <h3>Collaboration Marketplace</h3>
+              <p>Find co-founders, contractors, mentors and research partners — post short gigs and project calls.</p>
+            </div>
+          </div><!-- End Feature Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+            <div class="service-item position-relative">
+              <div class="icon"><i class="bi bi-shield-lock-fill"></i></div>
+              <h3>Trust & Verification</h3>
+              <p>Verification badges and Nova Score (reputation) help reduce risk and increase trust across the platform.</p>
+            </div>
+          </div><!-- End Feature Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+            <div class="service-item position-relative">
+              <div class="icon"><i class="bi bi-chat-dots"></i></div>
+              <h3>Messaging & Deals</h3>
+              <p>Built-in messaging, pitch rooms and deal-tracking to take conversations from discovery to closing.</p>
+            </div>
+          </div><!-- End Feature Item -->
+
+        </div>
+      </div>
+    </section><!-- End Features Section -->
+
+    <!-- ======= Opportunity Showcase Section ======= -->
+    <section id="opportunities" class="section">
+      <div class="container section-title" data-aos="fade-up">
+        <span>Latest Opportunities</span>
+        <h2>Featured Pitches & Open Roles</h2>
+        <p>Hand-picked opportunities that matched trending searches and investor interests.</p>
+      </div>
+
+      <div class="container" data-aos="fade-up">
+        <div class="row gy-4">
+
+          <div class="col-lg-4 col-md-6">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body">
+                <h5 class="card-title">AI-driven Agri Marketplace — Co-founder (CTO)</h5>
+                <p class="card-text">Seeking a technical co-founder to build an ML-powered marketplace for smallholder farmers (seed-stage).</p>
+                <p class="mb-1"><strong>Location:</strong> Accra (remote friendly)</p>
+                <p class="mb-1"><strong>Posted by:</strong> Dreamer • 3 days ago</p>
+                <a href="view_opportunity.php?id=1" class="btn btn-outline-primary mt-2">View Pitch</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body">
+                <h5 class="card-title">Frontend Engineer — E-commerce Scale-up</h5>
+                <p class="card-text">Hiring a senior frontend engineer for performance-focused web work. Competitive equity & remote options.</p>
+                <p class="mb-1"><strong>Location:</strong> Remote</p>
+                <p class="mb-1"><strong>Posted by:</strong> Company • 1 week ago</p>
+                <a href="view_opportunity.php?id=2" class="btn btn-outline-primary mt-2">View Role</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body">
+                <h5 class="card-title">Seed Investor — Fintech Round</h5>
+                <p class="card-text">Looking for seed investors to join a $250k round for a payments startup with early traction.</p>
+                <p class="mb-1"><strong>Stage:</strong> Seed</p>
+                <p class="mb-1"><strong>Posted by:</strong> Investor • 2 weeks ago</p>
+                <a href="view_opportunity.php?id=3" class="btn btn-outline-primary mt-2">See Details</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section><!-- End Opportunities Section -->
+
+    <!-- ======= Testimonials Section ======= -->
+    <section id="testimonials" class="testimonials section light-background">
+      <div class="container section-title" data-aos="fade-up">
+        <span>Success Stories</span>
+        <h2>What our community says</h2>
+        <p>Real outcomes: collaboration, funding and jobs that started on OctaNova.</p>
+      </div>
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="swiper init-swiper" data-speed="600" data-delay="5000" data-breakpoints='{"320":{"slidesPerView":1,"spaceBetween":40},"1200":{"slidesPerView":3,"spaceBetween":20}}'>
+          <script type="application/json" class="swiper-config">
+            {
+              "loop": true,
+              "speed": 600,
+              "autoplay": { "delay": 5000 },
+              "slidesPerView": "auto",
+              "pagination": { "el": ".swiper-pagination", "type": "bullets", "clickable": true }
+            }
+          </script>
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p><i class="bi bi-quote quote-icon-left"></i>
+                  "I posted a short pitch, was connected to two investors and hired a CTO through OctaNova — in under a month."
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+                <img src="asset/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
+                <h3>Amina O.</h3>
+                <h4>Founder • AgriTech</h4>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p><i class="bi bi-quote quote-icon-left"></i>
+                  "Found a role that matched my skillset perfectly. The Nova Score and verified endorsements made the decision easy."
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+                <img src="asset/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
+                <h3>Kwame A.</h3>
+                <h4>Product Designer</h4>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p><i class="bi bi-quote quote-icon-left"></i>
+                  "As an investor I get higher-quality deal flow and can privately review pitches before committing time."
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+                <img src="asset/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
+                <h3>Laila M.</h3>
+                <h4>Angel Investor</h4>
+              </div>
+            </div>
+
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section><!-- End Testimonials -->
+
+    <!-- ======= Call To Action ======= -->
+    <section id="call-to-action" class="call-to-action section accent-background">
+      <div class="container">
+        <div class="row justify-content-center" data-aos="zoom-in" data-aos-delay="100">
+          <div class="col-xl-10 text-center">
+            <h3>Ready to discover or create opportunities?</h3>
+            <p>Create a profile, post a pitch, or search now — OctaNova helps opportunity find you.</p>
+            <a class="cta-btn btn btn-primary" href="signup.php">Create Your Profile</a>
+            <a class="cta-btn btn btn-outline-light ms-2" href="pitch.php">Post a Pitch</a>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Call To Action -->
+
+    <!-- ======= Team Section ======= -->
+    <section id="team" class="team section">
+      <div class="container section-title" data-aos="fade-up">
+        <span>Our Team</span>
+        <h2>Team</h2>
+        <p>Small, experienced team focused on connecting people and opportunities.</p>
+      </div>
+
+      <div class="container">
+        <div class="row gy-5">
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="member text-center">
+              <div class="pic"><img src="asset/img/team/team-1.jpg" class="img-fluid" alt=""></div>
+              <div class="member-info mt-3">
+                <h4>Alex Mensah</h4>
+                <span>Founder & CEO</span>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="member text-center">
+              <div class="pic"><img src="asset/img/team/team-2.jpg" class="img-fluid" alt=""></div>
+              <div class="member-info mt-3">
+                <h4>Sara Johnson</h4>
+                <span>Head of Product</span>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="member text-center">
+              <div class="pic"><img src="asset/img/team/team-3.jpg" class="img-fluid" alt=""></div>
+              <div class="member-info mt-3">
+                <h4>Daniel Okoro</h4>
+                <span>Head of Engineering</span>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+
+        </div>
+      </div>
+    </section><!-- End Team Section -->
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact section">
+      <div class="container section-title" data-aos="fade-up">
+        <span>Contact</span>
+        <h2>Contact</h2>
+        <p>Have a question or want to partner with OctaNova? Send us a message.</p>
+      </div>
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4">
+          <div class="col-lg-5">
+            <div class="info-wrap">
+              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
+                <i class="bi bi-geo-alt flex-shrink-0"></i>
+                <div>
+                  <h3>Address</h3>
+                  <p>Accra, Ghana (Remote-first)</p>
+                </div>
+              </div>
+
+              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+                <i class="bi bi-telephone flex-shrink-0"></i>
+                <div>
+                  <h3>Call Us</h3>
+                  <p>+233 24 000 0000</p>
+                </div>
+              </div>
+
+              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+                <i class="bi bi-envelope flex-shrink-0"></i>
+                <div>
+                  <h3>Email Us</h3>
+                  <p>hello@octanova.com</p>
+                </div>
+              </div>
+
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!..." frameborder="0" style="border:0; width: 100%; height: 270px;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+          </div>
+
+          <div class="col-lg-7">
+            <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+              <div class="row gy-4">
+                <div class="col-md-6">
+                  <label for="name-field" class="pb-2">Your Name</label>
+                  <input type="text" name="name" id="name-field" class="form-control" required>
+                </div>
+
+                <div class="col-md-6">
+                  <label for="email-field" class="pb-2">Your Email</label>
+                  <input type="email" class="form-control" name="email" id="email-field" required>
+                </div>
+
+                <div class="col-md-12">
+                  <label for="subject-field" class="pb-2">Subject</label>
+                  <input type="text" class="form-control" name="subject" id="subject-field" required>
+                </div>
+
+                <div class="col-md-12">
+                  <label for="message-field" class="pb-2">Message</label>
+                  <textarea class="form-control" name="message" rows="8" id="message-field" required></textarea>
+                </div>
+
+                <div class="col-md-12 text-center">
+                  <div class="loading">Loading</div>
+                  <div class="error-message"></div>
+                  <div class="sent-message">Your message has been sent. Thank you!</div>
+
+                  <button type="submit" class="btn btn-primary">Send Message</button>
+                </div>
+
+              </div>
+            </form>
+          </div><!-- End Contact Form -->
+
+        </div>
+      </div>
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+    <div class="footer-newsletter">
+      <div class="container">
+        <div class="row justify-content-center text-center">
+          <div class="col-lg-6">
+            <h4>Join Our Newsletter</h4>
+            <p>Get product updates, community highlights, and featured opportunities.</p>
+            <form action="forms/newsletter.php" method="post" class="php-email-form">
+              <div class="newsletter-form d-flex justify-content-center">
+                <input type="email" name="email" placeholder="Your email">
+                <input type="submit" value="Subscribe" class="btn btn-primary ms-2">
+              </div>
+              <div class="loading">Loading</div>
+              <div class="error-message"></div>
+              <div class="sent-message">Your subscription request has been sent. Thank you!</div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a href="index.html" class="d-flex align-items-center">
+            <img src="asset/img/logo.png" alt="OctaNova" style="height:48px;">
+          </a>
+          <div class="footer-contact pt-3">
+            <p>Nova — Search-first platform connecting ideas, talent and capital.</p>
+            <p class="mt-3"><strong>Phone:</strong> <span>+233 24 000 0000</span></p>
+            <p><strong>Email:</strong> <span>hello@octanova.com</span></p>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i> <a href="#hero">Home</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#about">About</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#features">Features</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#opportunities">Opportunities</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>For Users</h4>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i> <a href="signup.php">Create Profile</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="login.php">Login</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="pitch.php">Post a Pitch</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="search.php">Search</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4 col-md-12">
+          <h4>Follow Us</h4>
+          <p>Join the OctaNova community on social media for updates and featured opportunities.</p>
+          <div class="social-links d-flex">
+            <a href="#"><i class="bi bi-twitter-x"></i></a>
+            <a href="#"><i class="bi bi-facebook"></i></a>
+            <a href="#"><i class="bi bi-instagram"></i></a>
+            <a href="#"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>© 2025 OctaNova. All Rights Reserved.</p>
+      <div class="credits">
+        Designed by your team.
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="asset/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="asset/vendor/php-email-form/validate.js"></script>
+  <script src="asset/vendor/aos/aos.js"></script>
+  <script src="asset/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="asset/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="asset/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="asset/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="asset/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="asset/js/main.js"></script>
+
+</body>
+
+</html>
