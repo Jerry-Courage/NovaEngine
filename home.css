@@ -50,10 +50,15 @@ body {
 
 .bar {
   margin-top: -57px;
+  max-width:730px ;
 }
 
 .site {
   margin-top: -220px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .icon {
@@ -73,7 +78,7 @@ body {
   }
 
   .go {
-    font-size: 50px;
+    max-width:80% ;
   }
 
   .put {
@@ -85,7 +90,9 @@ body {
   }
 
   .bar {
-    margin-top: 20px; /* give search bar breathing room */
+    
+    max-width: 80%; /* give search bar breathing room */
+    
   }
 }
 
@@ -94,6 +101,7 @@ body {
     flex-direction: column;
     font-size: 40px;
     margin-bottom: -10px;
+    max-width: 80%;
   }
 
   h1 {
@@ -111,6 +119,10 @@ body {
     width: 20px;
     padding-left: 10px;
   }
+  .bar {
+    
+    max-width: 80%;
+  }
 }
 
 @media (max-width: 400px) {
@@ -120,12 +132,17 @@ body {
 
   .go {
     font-size: 28px;
+    max-width: 80%;
   }
 
   .put {
     width: 100%;
     font-size: 14px;
     height: 40px;
+  }
+  .bar {
+ 
+    max-width: 80%;
   }
 }
 
