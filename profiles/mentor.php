@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nova | Company | Profile</title>
+    <title>Nova | Mentor | Profile</title>
     <style>
         body{
         background-color: rgb(4, 10, 15);
@@ -48,8 +48,8 @@
             border-radius: 5px;
             width: 80%;
             margin: 10px 0;
-            color: white;
             background-color: rgb(4, 10, 15);
+            color: white;
         }
         select{
             width: 80%;
@@ -88,19 +88,19 @@
     </div>
 
     <div class="details">
-        <h1>Let's get you Ready (Company)</h1>
+        <h1>Let's get you Started (Mentor)</h1>
 
         <h2>Basic Info</h2>
             <form method ="POST" action="saveProfiles.php">
             <div class="Binfo">
-                <label for="Full Name">Company/Organization Name</label><br>
-                 <input type="text" class="fn" placeholder="Full Name" name="company_name" required><br>
-                 <label for="bio">Short Description </label><br>
-                <textarea id="message" name="about_company" rows="4" cols="50" placeholder="('Tell us a lil bit about your comapny or organization')" required></textarea>
+                <label for="Full Name">Full Name</label><br>
+                 <input type="text" class="fn" placeholder="Full Name" name="fullName" required><br>
+                 <label for="bio">Short Bio</label><br>
+                <textarea id="message" name="bio" rows="4" cols="50" placeholder="A sentence or two about what they want (e.g. 'Aspiring software developer passionate about AI and robotics')" required></textarea>
                 <br>
                 <label for="country">Country</label><br>
                 <select id="country" name="country" class="location" required>
-                    <option value="">Select your country of residence</option>
+                    <option value="">Select your country</option>
                     <option value="Afghanistan">Afghanistan</option>
                     <option value="Albania">Albania</option>
                     <option value="Algeria">Algeria</option>
@@ -298,27 +298,23 @@
                 <br>
             </div>
 
-            <h2>Opportunity Details</h2>
-            <label for="field">Company Field </label><br>
-            <textarea id="message" name="company_field" rows="4" cols="50" placeholder="Tech,business,art,music etc" required></textarea><br>
-            <label for="investmentStage">Opportunities you wish to offer</label><br>
-            <textarea id="message" name="opportunity_offered" rows="4" cols="50" placeholder="Internships,Job oportunity, Mentorship, Funding etc" required></textarea><br>
-            <label for="investmentRange">Skills / Talent interested in finding</label><br>
-            <textarea id="message" name="skills_talent_interested_in" rows="4" cols="50" placeholder="(eg. Web dev, digital marketter, researcher etc)" required></textarea><br>
-            <label for="investmentType">Type (Remote / On-site)</label><br>
-            <input type="text" id="message" name="type" required><br>
-
+            <h2>Expertise</h2>
+            <label for="goal">Skills / Expertise</label><br>
+            <textarea required id="message" name="expertise" rows="4" cols="50" placeholder="(AI, Finance, Marketing)" required></textarea><br>
+            <label for="Interest">Years of experience</label><br>
+            <input type="text" placeholder="Years of experience" name="years_experience" required><br>
+            
+            <h2>Mentor Focus</h2>
+            <label for="opportunity">Who do you seek to mentor</label><br>
+            <textarea required id="message" name="mentee_focus" rows="4" cols="50" placeholder="(students, startups, professionals)" required></textarea><br>
+            <label for="opportunity">Support Type</label><br>
+            <textarea required id="message" name="support_type" rows="4" cols="50" placeholder="Career advice,Business strategy,Technical knowledge" required></textarea><br>
 
             <h2>Contact</h2>
             <label for="phone">Phone Number</label>
             <input type="text" placeholder="Start with country code" name="phone" required><br>
-            <label for="website">Website (optional)</label>
-            <input type="text" placeholder="Company or organization website " name="website"><br>
-            <label for="link">Application Link / Email  (if any)</label>
-            <input type="text" placeholder="Application link if any or email to contact" name="link">
-            
-            <input type="button" value="Done" style="width: 100px;margin-left: 520px;color: gray; transition: 0.2s linear;" class="done">
 
+            <input type="button" value="Done" style="width: 100px;margin-left: 520px;color: gray; transition: 0.2s linear;" class="done">
                 </form>
     </div>
 

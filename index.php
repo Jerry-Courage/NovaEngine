@@ -14,7 +14,7 @@
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>\
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
@@ -27,7 +27,6 @@
   <!-- Main CSS File -->
   <link href="asset/css/main.css" rel="stylesheet">
 </head>
-
 <body class="index-page">
 
   <!-- ======= Header ======= -->
@@ -50,7 +49,7 @@
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
-      <a class="btn-getstarted" href="signUp.html">Get Started</a>
+      <a class="btn-getstarted" href="signUp.php">Get Started</a>
 
     </div>
   </header><!-- End Header -->
@@ -70,8 +69,8 @@
               <input name="q" class="form-control me-2" type="search" placeholder="Search: e.g. 'AI researcher', 'seed investor', 'UX designer'..." aria-label="Search">
               <select name="role" class="form-select me-2" aria-label="Role filter">
                 <option value="">All</option>
-                <option value="dreamer">Dreamers (Ideas)</option>
-                <option value="talent">Talents</option>
+                <option value="dreamer">Dreamers (Start Ups)</option>
+                <option value="talent">Mentors</option>
                 <option value="investor">Investors</option>
                 <option value="company">Companies</option>
                 <option value="opportunity">Opportunities</option>
