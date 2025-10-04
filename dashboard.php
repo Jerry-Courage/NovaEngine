@@ -4,6 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Nova | Dashboard</title>
+  <!-- Font Awesome CDN for fa fa icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-papm6p+z8Qw7vQvQw7vQvQw7vQvQw7vQw7vQw7vQw7vQw7vQw7vQw7vQw7vQw7vQw7vQw7vQw7vQw7vQw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ENjdO4Dr2bkBIFxQpeoA6VKHr8BL6l5/2n5lHn6tZl5F5D5F5F5F5F5F5F5F5F5F" crossorigin="anonymous">
+  <!-- Bootstrap JS Bundle (optional, for components that require JS) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-qQ2e6r6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b" crossorigin="anonymous"></script>
   <style>
     /* --- GLOBAL THEME --- */
     body {
