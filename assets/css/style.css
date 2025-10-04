@@ -8,10 +8,23 @@ body {
   font-family: 'Poppins', sans-serif;
   background-color: #0a0f2c;
   color: #fff;
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+form {
+  transform: scale(0.8);   /* scale down to 90% size */
+  max-width: 600px;        /* optional: limit width */
+  margin: 0 auto;          /* center */
+}
+
+
+/* Shrink role cards */
+.role-card {
+  padding: 8px;
+  font-size: 0.85rem;
 }
 
 /* Container */
@@ -22,6 +35,8 @@ body {
   justify-content: center;
   padding: 20px;
   margin-right: 110px;
+  
+  
 }
 .background {
   position: fixed;
@@ -37,10 +52,12 @@ body {
 .login-content {
   background: rgba(255, 255, 255, 0.05);
   border-radius: 12px;
-  padding: 30px 25px;
+  padding: 20px 25px;
   width: 100%;
-  max-width: 420px;
+  max-width: 400px;
   text-align: center;
+ 
+  
 }
 
 .login-content img {
@@ -202,4 +219,55 @@ a:hover {
   .background{
     display:none
   }
+}
+.alert {
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  text-align: center;
+  font-weight: 500;
+}
+.alert-error {
+  background: #ffdddd;
+  color: #a94442;
+}
+.alert-success {
+  background: #ddffdd;
+  color: #3c763d;
+}
+
+/* Role Options */
+.role-options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin: 15px 0;
+}
+.role-card {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 12px;
+  border-radius: 12px;
+  text-align: center;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: 0.3s;
+}
+.role-card:hover {
+  border-color: #38d39f;
+}
+.role-card input {
+  display: none;
+}
+.role-card span {
+  display: block;
+  font-size: 1rem;
+  color: #fff;
+}
+.role-card i {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+  display: block;
+}
+.role-card input:checked + span {
+  color: #38d39f;
 }
