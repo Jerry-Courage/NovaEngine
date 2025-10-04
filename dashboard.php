@@ -21,7 +21,10 @@
     <div class="site">
       <!-- Logo -->
       <div class="go">
-        <img src="image/file_00000000e33861f78775d9159bad979d.png" alt="Nova Logo" />
+        <img
+          src="image/Still 2025-10-02 184149_1.1.2.png"
+          alt="Nova Logo"
+        />
       </div>
 
       <!-- Search bar -->
@@ -30,7 +33,7 @@
         <input
           class="put"
           type="search"
-          placeholder=""
+          placeholder="What are you looking for ? search here"
         />
       </div>
     </div>
