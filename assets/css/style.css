@@ -15,7 +15,7 @@ body {
 }
 
 form {
-  transform: scale(0.8);   /* scale down to 90% size */
+  transform: scale(0.9);   /* scale down to 90% size */
   max-width: 600px;        /* optional: limit width */
   margin: 0 auto;          /* center */
 }
