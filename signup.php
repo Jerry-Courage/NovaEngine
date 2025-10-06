@@ -37,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 switch ($user_type) {
                     case 'Mentor': header("Location: profiles/mentor.php"); break;
                     case 'Dreamer': header("Location: profiles/dreamer.php"); break;
-                    case 'Investor': header("Location: profiles/investor.php"); break;
+                    case 'Investor': header("Location: profiles/investors.php"); break;
                     case 'Company': header("Location: profiles/company.php"); break;
                 }
                 exit();
@@ -69,7 +69,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
       <?php endif; ?>
 
-      <form action="" method="POST">
+      <form  method="POST">
         <img src="asset/img/logo.png" alt="User Avatar" />
         <h2 class="title">Welcome</h2>
 
@@ -113,6 +113,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <input type="radio" name="user_type" value="Mentor" />
             <span><i class="fas fa-chalkboard-teacher"></i> Mentor</span>
           </label>
+          <label class="role-card">
+            <input type="radio" name="user_type" value="Startup" />
+            <span><i class="fas fa-chalkboard-teacher"></i> Startup</span>
+          </label>
+          <label class="role-card">
+            <input type="radio" name="user_type" value="Students" />
+            <span><i class="fas fa-chalkboard-teacher"></i> Students</span>
+          </label>
+
+
+
+        
         </div>
 
         <a href="login.php">Already have an account?</a>

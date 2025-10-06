@@ -1,3 +1,33 @@
+<?php
+session_start();
+include("../db.php");
+
+if (!isset($_SESSION['username'])) {
+  header("Location: ../login.php");
+  exit();
+}
+
+$user_id = $_SESSION['user_id'];
+
+// Fetch fullName and field_of_interest
+$stmt = $conn->prepare("SELECT fullName, field_of_interest FROM dreamers WHERE user_id = ?");
+$stmt->bind_param("i", $user_id);
+$stmt->execute();
+$stmt->bind_result($fullName, $field_of_interest);
+$stmt->fetch();
+$stmt->close();
+
+// Fallbacks
+if (empty($fullName)) $fullName = $_SESSION['username'];
+if (empty($field_of_interest)) $field_of_interest = "Innovation, Education, Finance, Health";
+
+// Convert to array of tags (split by comma)
+$interests = array_map('trim', explode(',', $field_of_interest));
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -11,7 +41,7 @@
         color: white;
         font-family: "Poppins", Arial, sans-serif;
         margin: 0;
-        padding: 0px;
+        padding: 0;
         padding-top: 100px;
         display: flex;
         flex-direction: column;
@@ -38,8 +68,8 @@
         height: 55px;
         background: rgba(11, 18, 56, 0.95);
         display: flex;
-
         align-items: center;
+        justify-content: space-between;
         padding: 12px 30px;
         box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
         z-index: 100;
@@ -48,43 +78,37 @@
 
       .navbar .logo {
         display: flex;
-        justify-content: centers;
         align-items: center;
+        justify-content: center;
         gap: 10px;
-        margin-left: 63px;
+        margin-left: 30px;
       }
 
       .logo .golo {
         width: 86px;
         height: auto;
-        margin-left: -39px;
+        margin-left: 20px;
       }
 
-      .text-icon {
-        margin-left: 460px;
-        margin-top: 5px;
-      
-      }
       .text-icon img {
-        width: 265px;
-        height: 137px;
+        width: 210px;
+        height: 120px;
+        margin-left: -70px;
       }
 
       /* --- PROFILE DROPDOWN --- */
       .profile {
-        position: absolute;
+        position: relative;
         display: flex;
-        left: 85%;
         align-items: center;
-
-        gap: 10px;
+        gap: 8px;
+        cursor: pointer;
       }
 
       .profile img {
         width: 40px;
         height: 40px;
         border-radius: 50%;
-        cursor: pointer;
         border: 2px solid #8ab4f8;
         transition: transform 0.2s ease;
       }
@@ -93,17 +117,45 @@
         transform: scale(1.05);
       }
 
+      .profile i {
+        font-size: 14px;
+        color: #8ab4f8;
+        transition: transform 0.2s ease;
+      }
+
+      .profile.active i {
+        transform: rotate(180deg);
+      }
+
       .dropdown {
         display: none;
         position: absolute;
+        top: 50px;
         right: 0;
         background-color: #111633;
         border-radius: 10px;
-        min-width: 160px;
+        min-width: 170px;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
         z-index: 1;
         overflow: hidden;
         border: 1px solid #1d2455;
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+      }
+
+      .dropdown.show {
+        display: block;
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .dropdown-header {
+        padding: 12px 15px;
+        background-color: #0e1433;
+        color: #8ab4f8;
+        border-bottom: 1px solid #1d2455;
+        font-size: 0.95rem;
       }
 
       .dropdown a {
@@ -121,27 +173,90 @@
         color: white;
       }
 
-      .profile:hover .dropdown {
-        display: block;
-      }
-
       .dropdown i {
         width: 18px;
         text-align: center;
       }
 
-      /* --- HERO SECTION --- */
+      /* --- SIDEBAR --- */
+      .side {
+        background-color: rgba(11, 18, 56, 0.95);
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        top: 79px;
+        height: 100%;
+        width: 72px;
+        border-right: 1px solid rgba(11, 18, 56, 0.95);
+        z-index: 200;
+        overflow: hidden;
+        transition: width 0.3s ease;
+      }
+
+      .side.expanded {
+        width: 200px;
+      }
+
+      .menu-toggle {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        background: #8ab4f8;
+        color: #0a0f2c;
+        border: none;
+        border-radius: 6px;
+        padding: 6px 10px;
+        cursor: pointer;
+        z-index: 250;
+        transition: background 0.3s;
+      }
+
+      .menu-toggle:hover {
+        background: #b6ceff;
+      }
+
+      .side ul {
+        list-style: none;
+        padding: 0;
+        margin: 20px 0;
+      }
+
+      .side ul li {
+        padding: 15px 20px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        color: #8ab4f8;
+        cursor: pointer;
+        white-space: nowrap;
+        transition: background 0.3s;
+      }
+
+      .side ul li:hover {
+        background-color: #1d2455;
+      }
+
+      .side ul li i {
+        font-size: 20px;
+        min-width: 24px;
+        text-align: center;
+      }
+
+      .side ul li span {
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+
+      .side.expanded ul li span {
+        opacity: 1;
+      }
+
+      /* --- HERO --- */
       .hero {
         text-align: center;
         transform: scale(0.9);
         margin-top: 40px;
         margin-bottom: 10px;
-      }
-
-      .hero img {
-        width: 180px;
-        height: auto;
-        margin-bottom: -10px;
       }
 
       .hero h1 {
@@ -209,6 +324,7 @@
         margin: 40px 0 20px;
         text-align: center;
       }
+
       .tags span {
         margin: 0 12px;
         padding: 6px 12px;
@@ -219,6 +335,7 @@
         color: #8ab4f8;
         transition: background 0.3s ease;
       }
+
       .tags span:hover {
         background: #1d2455;
       }
@@ -243,16 +360,6 @@
       .card:hover {
         transform: translateY(-5px);
         box-shadow: 0 0 15px rgba(138, 180, 248, 0.2);
-      }
-
-      .card h3 {
-        margin-top: 0;
-        margin-bottom: 10px;
-      }
-
-      .card p {
-        color: #bbb;
-        font-size: 0.95rem;
       }
 
       .badge {
@@ -293,75 +400,55 @@
       .fab:hover {
         transform: scale(1.1);
       }
-      .name {
-        display: inline-block;
-
-        font-weight: bold;
-        color: #8ab4f8;
-      }
-
-      /* --- RESPONSIVE --- */
-      @media (max-width: 768px) {
-        .hero img {
-          width: 140px;
-        }
-        .hero h1 {
-          font-size: 1.3rem;
-        }
-        .bar {
-          width: 95%;
-        }
-      }
     </style>
-    <!-- Include Font Awesome for icons -->
-    <script
-      src="https://kit.fontawesome.com/a076d05399.js"
-      crossorigin="anonymous"
-    ></script>
+
+    <!-- Font Awesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
   </head>
+
   <body>
     <!-- NAVBAR -->
     <div class="navbar">
       <div class="logo">
-        <img class="golo" src="asset/img/logo.png" alt="Nova Logo" />
+        <button class="menu-toggle" id="menuToggle">
+      <i class="fas fa-bars"></i>
+    </button>
+        <img class="golo" src="../asset/img/logo.png" alt="Nova Logo" />
       </div>
 
       <div class="text-icon">
-        <img
-          
-          src="image/file_00000000e33861f78775d9159bad979d.png"
-          alt="Nova"
-        />
+        <img src="../image/file_00000000e33861f78775d9159bad979d.png" alt="Nova" />
       </div>
 
-      <div class="profile">
-        <img src="assets/img/avatar.svg" alt="Profile" />
-        <h3 class="name">John Doe</h3>
-        <div class="dropdown">
-          <a href="#"><i class="fas fa-user"></i> Profile</a>
-          <a href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a>
+      <div class="profile" id="profileMenu">
+        <img src="../assets/img/avatar.svg" alt="Profile" />
+        <i class="fas fa-chevron-down"></i>
+        <div class="dropdown" id="dropdownMenu">
+          <div class="dropdown-header"><strong><?php echo $fullName; ?></strong></div>
+          <a href="#"><i class="fas fa-user" style="transform:rotate(0deg)"></i> Profile</a>
+          <a href="../logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a>
         </div>
       </div>
     </div>
 
-    <!-- HERO -->
-    <div
-      class="side"
-      style="
-        background-color: rgba(11, 18, 56, 0.95);
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        top: 55px;
-        height: 100%;
-        width: 72px;
-        border-bottom-style: solid;
-        border-right-color: #0a0f2c;
-        border-width: 5px;
-        z-index: 200;
-      "
-    ></div>
+    <!-- MENU TOGGLE BUTTON -->
+    
 
+    <!-- SIDE BAR -->
+    <div class="side" id="sidebar">
+      <ul>
+        <li onclick="window.location.href='chat.php'"><i class="fas fa-comments"></i><span>Chat</span></li>
+        <li onclick="window.location.href='pitch_idea.php'"><i class="fas fa-lightbulb"></i><span>Pitch Idea</span></li>
+        <li onclick="window.location.href='opportunities.php'"><i class="fas fa-briefcase"></i><span>Opportunities</span></li>
+        <li onclick="window.location.href='community.php'"><i class="fas fa-users"></i><span>Community</span></li>
+        <li onclick="window.location.href='settings.php'"><i class="fas fa-cog"></i><span>Settings</span></li>
+      </ul>
+    </div>
+
+    <!-- HERO -->
     <section class="hero">
       <h1>Welcome to the Opportunity Engine</h1>
       <p>Not just a search bar - your gateway to the future</p>
@@ -369,26 +456,24 @@
 
     <!-- SEARCH BAR -->
     <form action="search.php" method="get" class="bar">
-      <img class="icon" src="image/search.svg" alt="search icon" />
+      <img class="icon" src="../image/search.svg" alt="search icon" />
       <input
         class="put"
         type="search"
         name="q"
         id="searchInput"
         placeholder="What are you looking for? Your future starts here..."
-        aria-label="Search"
       />
-      <img class="mic" src="image/mic.png" alt="mic button" id="micButton" />
+      <img class="mic" src="../image/mic.png" alt="mic button" id="micButton" />
     </form>
 
     <!-- TAGS -->
     <div class="tags">
-      <h2>Discover Opportunities in:</h2>
-      <span>Innovation</span>
-      <span>Education</span>
-      <span>Finance</span>
-      <span>Health</span>
-    </div>
+  <h2>Discover Opportunities in:</h2>
+  <?php foreach ($interests as $interest): ?>
+    <span><?php echo htmlspecialchars($interest); ?></span>
+  <?php endforeach; ?>
+</div>
 
     <!-- OPPORTUNITIES -->
     <h2>Matched Opportunities</h2>
@@ -413,11 +498,34 @@
       </div>
     </div>
 
-    <!-- Floating Action Button -->
     <button class="fab">+</button>
 
-    <!-- Voice Recognition -->
     <script>
+      // Dropdown toggle
+      const profileMenu = document.getElementById("profileMenu");
+      const dropdown = document.getElementById("dropdownMenu");
+
+      profileMenu.addEventListener("click", () => {
+        dropdown.classList.toggle("show");
+        profileMenu.classList.toggle("active");
+      });
+
+      document.addEventListener("click", (event) => {
+        if (!profileMenu.contains(event.target)) {
+          dropdown.classList.remove("show");
+          profileMenu.classList.remove("active");
+        }
+      });
+
+      // Sidebar toggle
+      const menuToggle = document.getElementById("menuToggle");
+      const sidebar = document.getElementById("sidebar");
+
+      menuToggle.addEventListener("click", () => {
+        sidebar.classList.toggle("expanded");
+      });
+
+      // Voice recognition
       const micButton = document.getElementById("micButton");
       const searchInput = document.getElementById("searchInput");
 
@@ -426,8 +534,6 @@
 
       if (SpeechRecognition) {
         const recognition = new SpeechRecognition();
-        recognition.continuous = false;
-        recognition.interimResults = false;
         recognition.lang = "en-US";
 
         micButton.addEventListener("click", () => {
@@ -436,22 +542,12 @@
         });
 
         recognition.onresult = (event) => {
-          const speechResult = event.results[0][0].transcript;
-          searchInput.value = speechResult;
+          searchInput.value = event.results[0][0].transcript;
         };
 
         recognition.onend = () => {
           micButton.classList.remove("recording");
         };
-
-        recognition.onerror = (event) => {
-          micButton.classList.remove("recording");
-          alert("Speech recognition error: " + event.error);
-        };
-      } else {
-        micButton.addEventListener("click", () => {
-          alert("Sorry, your browser does not support speech recognition.");
-        });
       }
     </script>
   </body>

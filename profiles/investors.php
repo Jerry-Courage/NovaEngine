@@ -300,13 +300,13 @@
 
             <h2>Investment Focus</h2>
             <label for="field">Preferred Industries / Fields</label><br>
-            <textarea id="message" name="preferred_industries" rows="4" cols="50" placeholder="Preferred Industries" required></textarea><br>
+            <textarea id="message" name="preferred_industries" rows="4" cols="50" placeholder="(e.g. Technology, Healthcare, Education)" required></textarea><br>
             <label for="investmentStage">Stage of Investment</label><br>
             <textarea id="message" name="investment_stage" rows="4" cols="50" placeholder="(Seed, Series A, Growth, etc.)" required></textarea><br>
             <label for="investmentRange">Typical Investment Range</label><br>
             <textarea id="message" name="investment_range" rows="4" cols="50" placeholder="($5,000 – $50,000, for example)" required></textarea><br>
             <label for="investmentType">Type of Support</label><br>
-            <textarea id="message" name="investment_type" rows="4" cols="50" placeholder="(Money, Mentorship, Resources, Partnerships, Scholarship)" required></textarea><br>
+            <textarea id="message" name="investment_type" rows="4" cols="50" placeholder="(Funding, Mentorship, Partnerships, Scholarship)" required></textarea><br>
 
 
     
@@ -320,7 +320,7 @@
             <label for="website">Website (optional)</label>
             <input type="text" placeholder="Company or organization website " name="website"><br>
 
-            <input type="button" value="Done" style="width: 100px;margin-left: 520px;color: gray; transition: 0.2s linear;" class="done">
+            <input type="submit" value="Done" style="width: 100px;margin-left: 520px;color: gray; transition: 0.2s linear;" class="done">
                 </form>
     </div>
 

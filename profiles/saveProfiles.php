@@ -13,12 +13,13 @@ $user_type = $_SESSION['user_type']; // dreamer, mentor, company, investor
 
 if ($_SERVER['REQUEST_METHOD'] === "POST") {
 
-    // Prepare data safely
+    // Helper function to sanitize inputs
     function clean($data) {
-        return trim(htmlspecialchars($data ?? ''));
+        return trim(htmlspecialchars($data ?? '', ENT_QUOTES, 'UTF-8'));
     }
 
     switch ($user_type) {
+
         // ---------------- DREAMER ----------------
         case 'dreamer':
             $fullName = clean($_POST['fullName']);
@@ -110,28 +111,43 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
             );
             break;
 
-        // ---------------- UNKNOWN USER TYPE ----------------
         default:
-            die("Invalid user type specified.");
+            die("❌ Invalid user type specified.");
     }
 
-    // Execute the query safely
+    // ✅ Execute the insert safely
     if ($stmt->execute()) {
-        // Mark profile as complete
-        $update = "UPDATE users SET profile_complete = 1 WHERE id = ?";
-        $up = $conn->prepare($update);
-        $up->bind_param("i", $user_id);
-        $up->execute();
+    // Mark profile as complete
+    $update = $conn->prepare("UPDATE users SET profile_complete = 1 WHERE id = ?");
+    $update->bind_param("i", $user_id);
+    $update->execute();
 
-        // Clean up
-        $stmt->close();
-        $up->close();
-        $conn->close();
+    // Cleanup
+    $stmt->close();
+    $update->close();
+    $conn->close();
 
-        header("Location: ../dashboard.php");
-        exit;
-    } else {
-        echo "❌ Error saving profile: " . htmlspecialchars($stmt->error);
+    // ✅ Dynamic redirect based on user type
+    switch ($user_type) {
+        case 'dreamer':
+            header("Location: ../dreamer/dreamer_dashboard.php");
+            break;
+        case 'mentor':
+            header("Location: ../mentor/mentor_dashboard.php");
+            break;
+        case 'investor':
+            header("Location: ../investor/investor_dashboard.php");
+            break;
+        case 'company':
+            header("Location: ../company/company_dashboard.php");
+            break;
+        default:
+            header("Location: ../login.php");
+            break;
     }
+    exit;
+} else {
+    echo "❌ Error saving profile: " . htmlspecialchars($stmt->error);
+}
 }
 ?>

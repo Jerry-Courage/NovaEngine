@@ -18,18 +18,25 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         if (password_verify($password, $user['password'])) {
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['user_type'] = $user['user_type'];
+            $_SESSION['username'] = $user['username'];
 
             if ($user['profile_complete'] == 0) {
                 // Redirect to their profile page if incomplete
                 switch ($user['user_type']) {
-                    case 'mentor': header("Location: profiles/mentor.php"); break;
-                    case 'dreamer': header("Location: profiles/dreamer.php"); break;
-                    case 'investor': header("Location: profiles/investor.php"); break;
-                    case 'company': header("Location: profiles/company.php"); break;
-                }
+    case 'mentor': header("Location: profiles/mentor.php"); exit;
+    case 'dreamer': header("Location: profiles/dreamer.php"); exit;
+    case 'investor': header("Location: profiles/investors.php"); exit;
+    case 'company': header("Location: profiles/company.php"); exit;
+}
+
             } else {
                 // Profile already complete → send to dashboard
-                header("Location: dashboard.php");
+                switch (strtolower($user['user_type'])) {
+    case 'mentor': header("Location: mentor/mentor_dashboard.php"); break;
+    case 'dreamer': header("Location: dreamer/dreamer_dashboard.php"); break;
+    case 'investor': header("Location: investor/investor_dashboard.php"); break;
+    case 'company': header("Location: company/company_dashboard.php"); break;
+}
             }
             exit;
         } else {
@@ -83,7 +90,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             <?php echo $message; ?>
           </div>
         <?php endif; ?>
-        <form action="" method="POST">
+        <form method="POST">
           <img src="asset/img/logo.png" alt="" />
           <h2 class="title">Welcome Back</h2>
 

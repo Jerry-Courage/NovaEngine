@@ -34,7 +34,7 @@
     <div class="container-fluid container-xl position-relative d-flex align-items-center">
 
       <a href="index.html" class="logo d-flex align-items-center me-auto">
-        <img src="asset/img/logo.png" alt="OctaNova logo" width="120" height="150">
+        <img src="asset/img/logo.png" alt="OctaNova logo" width="100" height="150">
       </a>
 
       <nav id="navmenu" class="navmenu">
